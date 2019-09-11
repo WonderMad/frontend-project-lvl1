@@ -13,6 +13,7 @@ parser: babel-eslint
 
 extends:
   - 'airbnb-base'
+  - 'eslint-config-airbnb-base'
 
 rules:
   no-console: 0
