@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-import { askName } from '../index';
+import { ask } from '../index';
 
 console.log('Welcome to the Brain Games!');
-const name = askName();
+const name = ask();
 console.log(`Hello ${name}`);
