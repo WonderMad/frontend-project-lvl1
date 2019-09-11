@@ -1,5 +1,7 @@
 #!/usr/bin/env node
-import {askName} from "../index.js";
-console.log("Welcome to the Brain Games!");
-askName;
-console.log(`Hello ${askName}`);
+
+import { askName } from '../index';
+
+console.log('Welcome to the Brain Games!');
+const name = askName();
+console.log(`Hello ${name}`);
