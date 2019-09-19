@@ -4,3 +4,5 @@ https://travis-ci.org/WonderMad/frontend-project-lvl1.svg?branch=master
 
 https://asciinema.org/a/QMwWBB4KovH8rVW0rIhP8O3XQ brain-even
 https://asciinema.org/a/gOkGXUgodimKMMIM4P7S2jb6Q brain-calc
+https://asciinema.org/a/s9Qp35Rqf5e7qdNkIA5wgtCvh brain-gcd
+
