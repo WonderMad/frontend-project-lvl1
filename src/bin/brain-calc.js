@@ -6,7 +6,7 @@ console.log('Welcome to the Brain Games!');
 console.log('What is the result of the expression?\n');
 const name = askName();
 console.log(`Hello ${name}\n`);
-// функция для генерации случайного выражения и вывода на экран с рассчетом результата
+// функция для генерации случайного выражения с возвратом результата и вывода выражения в консоль
 const expression = () => {
   const randomOperator = getRandomInt(1, 3);
   const num1 = getRandomInt(1, 50);
