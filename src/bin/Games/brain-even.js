@@ -1,13 +1,9 @@
 #!/usr/bin/env node
 
-import { askName, answer, getRandomInt } from '../index';
+import { answer, getRandomInt } from '../../index';
+import helloUserName from '../brain-games';
 
-// Приветствие
-console.log('Welcome to the Brain Games!');
-console.log('Answer "yes" if the number is even, otherwise answer "no".\n');
-const name = askName();
-console.log(`Hello ${name}\n`);
-
+const userName = helloUserName();
 // Игра
 const isEvenGame = () => {
   let i = 1;
@@ -21,13 +17,13 @@ const isEvenGame = () => {
     }
     if ((randomNum % 2 === 0 && userAnswer === 'no') || (randomNum % 2 === 1 && userAnswer === 'yes')) {
       i = 1;
-      console.log(`'no' is wrong answer. Correct answer was 'yes'.\nLet's try again, ${name}\n`);
+      console.log(`'no' is wrong answer. Correct answer was 'yes'.\nLet's try again, ${userName}\n`);
     }
     if (userAnswer !== 'no' && userAnswer !== 'yes') {
       i = 1;
       console.log(`'${userAnswer}' is wrong answer. Answer 'yes' or 'no'.\n`);
     }
   }
-  console.log(`Congratsulations! ${name}`);
+  console.log(`Congratsulations! ${userName}`);
 };
 isEvenGame();
