@@ -1,12 +1,15 @@
 #!/usr/bin/env node
 
-import hello from './brain-games';
-import { answer, getRandomInt } from '../index';
+import { askName, answer, getRandomInt } from '../index';
 
-const name = hello();
+// Приветствие
+console.log('Welcome to the Brain Games!');
+console.log('Answer "yes" if the number is even, otherwise answer "no".\n');
+const name = askName();
+console.log(`Hello ${name}\n`);
 
 // Игра
-const isEvenTrick = () => {
+const isEvenGame = () => {
   let i = 0;
   while (i <= 3) {
     const randomNum = getRandomInt(1, 100);
@@ -27,4 +30,4 @@ const isEvenTrick = () => {
   }
   console.log(`Congratsulations! ${name}`);
 };
-isEvenTrick();
+isEvenGame();

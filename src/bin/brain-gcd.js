@@ -9,7 +9,7 @@ console.log(`Hello ${name}\n`);
 
 // Функция для вывода двух чисел c возвратом рассчитанного НОД
 const gcdQuestion = () => {
-  const num = getRandomInt(1, 7); // Беру случайное число от 1 до 7(возможный НОД)
+  const num = getRandomInt(1, 11); // Беру случайное число от 1 до 11(возможный НОД)
   let num1 = num * getRandomInt(1, 25);
   let num2 = num * getRandomInt(1, 25);
   console.log(`Question: ${num1}, ${num2}`);
