@@ -17,8 +17,10 @@ const isPrime = () => {
     } else if (randomNum % i === 0 && i < randomNum) {
       return 'no';
     } else return 'yes';
-  } // Не понял как избавиться от consistent-return поэтому такое вот здесь.
-  return 'yes'; // Если оставить только этот return, то вывод не правильный.
+    /* Не понял как избвавиться от consistent-return, поэтому в конце добавил return 'yes'
+    Хоть без него работает нормально, но linter жалуется */
+  }
+  return 'yes';
 };
 
 game(isPrime, userName);
