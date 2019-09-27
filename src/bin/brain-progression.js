@@ -32,7 +32,7 @@ const progression = () => {
 
 // Игра
 
-const progressionTrick = () => {
+const progressionGame = () => {
   let i = 1;
   while (i <= 3) {
     const result = progression();
@@ -48,4 +48,4 @@ const progressionTrick = () => {
   }
   console.log(`Congratsulations! ${name}`);
 };
-progressionTrick();
+progressionGame();
