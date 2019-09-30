@@ -1,6 +1,7 @@
 # frontend project lvl 1
-<a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
-[![Build Status](https://travis-ci.org/WonderMad/frontend-project-lvl1.svg?branch=master)](https://travis-ci.org/WonderMad/frontend-project-lvl1)
+<a href="https://codeclimate.com/github/WonderMad/frontend-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/14f195539c33c1e5b604/maintainability" /></a> - codeclimat
+
+[![Build Status](https://travis-ci.org/WonderMad/frontend-project-lvl1.svg?branch=master)](https://travis-ci.org/WonderMad/frontend-project-lvl1) - travis
 
 https://asciinema.org/a/98K1wPd3DUPv5QziLpmq0CZ64 - brain-even
 https://asciinema.org/a/9S9bFywehCD1zKk7phxnlRuVi - brain-calc
