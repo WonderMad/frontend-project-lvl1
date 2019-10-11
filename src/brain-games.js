@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 import { askName } from './index';
 
 const helloUserName = () => {
