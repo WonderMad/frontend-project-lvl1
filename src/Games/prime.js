@@ -1,14 +1,9 @@
-import { getRandomInt } from '../index';
-
-
-const primeGame = () => {
-  const randomNum = getRandomInt(2, 101);
+const primeGame = (questionNum) => {
   let i = 2;
-  console.log(`question: ${randomNum}`);
-  while (i <= randomNum) {
-    if (randomNum % i !== 0) {
+  while (i <= questionNum) {
+    if (questionNum % i !== 0) {
       i += 1;
-    } else if (randomNum % i === 0 && i < randomNum) {
+    } else if (questionNum % i === 0 && i < questionNum) {
       return 'no';
     } else return 'yes';
     /* Не понял как избвавиться от consistent-return, поэтому в конце добавил return 'yes'

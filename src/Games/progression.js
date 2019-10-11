@@ -1,23 +1,17 @@
-import { getRandomInt } from '../index';
 
-
-const progressionGame = () => {
-  const progStart = getRandomInt(1, 50);
-  const progressionSpace = getRandomInt(1, 10);
-  const progressionLength = 10;
-  const progressionArr = new Array(progressionLength);
-  const randomPosition = getRandomInt(2, 9);
-
+const progressionGame = (distanceBetweenNumsInProgression, progStartNum,
+  progression, randomQuestionPosition) => {
+  const reassignedProgression = progression;
+  const line = progression;
   let i = 0;
-  let j = progressionSpace;
-  while (i < progressionArr.length) {
-    progressionArr[i] = `${j + progStart}`;
+  let j = distanceBetweenNumsInProgression;
+  while (i < progression.length) {
+    line[i] = `${j + progStartNum}`;
     i += 1;
-    j += progressionSpace;
+    j += distanceBetweenNumsInProgression;
   }
-  const result = progressionArr[randomPosition];
-  progressionArr[randomPosition] = '...';
-  console.log(progressionArr);
+  const result = progression[randomQuestionPosition];
+  reassignedProgression[randomQuestionPosition] = '...';
   return result;
 };
 

@@ -1,17 +1,13 @@
-import { getRandomInt } from '../index';
-
-
-const gcdGame = () => {
-  const num = getRandomInt(1, 11); // Беру случайное число от 1 до 11(возможный НОД)
-  let num1 = num * getRandomInt(1, 25);
-  let num2 = num * getRandomInt(1, 25);
-  console.log(`Question: ${num1}, ${num2}`);
-  while (num1 !== 0 && num2 !== 0) {
-    if (num1 > num2) {
-      num1 %= num2;
-    } else num2 %= num1;
+const gcdGame = (num1, num2) => {
+  let numb1 = num1;
+  let numb2 = num2;
+  while (numb1 !== 0 && numb2 !== 0) {
+    if (numb1 > numb2) {
+      numb1 %= numb2;
+    } else numb2 %= numb1;
   }
-  return `${num1 + num2}`; // возврат настоящего НОД
+  return `${numb1 + numb2}`;
 };
+
 
 export default gcdGame;
