@@ -2,19 +2,19 @@ import { answer } from './index';
 import helloUserName from './brain-games';
 
 
-const game = (gameFunc) => {
+const game = (gameData) => {
   const userName = helloUserName();
-  let i = 1;
-  while (i <= 3) {
-    const result = gameFunc();
+  for (let i = 1; i <= 3; i += 1) {
+    const values = gameData();
+    const question = values[0];
+    console.log(question);
+    const result = values[1];
     const userAnswer = answer();
     if (userAnswer === result) {
-      i += 1;
       console.log('correct!\n');
-    }
-    if (userAnswer !== result) {
-      i = 1;
-      console.log(`${userAnswer} is wrong answer. Correct answer was ${result}\nLet's try again, ${userName}`);
+    } else {
+      i = 0;
+      console.log(`${userAnswer} is wrong answer.Correct answer was ${result}\nLet's try again, ${userName}`);
     }
   }
   console.log(`Congratsulations! ${userName}`);
