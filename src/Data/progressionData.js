@@ -1,4 +1,4 @@
-import { getRandomInt } from '../index';
+import getRandomInt from '../index';
 import game from '../game-engine';
 import progressionGame from '../Games/progression';
 
