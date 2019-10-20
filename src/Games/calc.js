@@ -1,4 +1,4 @@
-const calcGame = (randomOperator, num1, num2) => {
+const playCalc = (randomOperator, num1, num2) => {
   switch (randomOperator) {
     case 0:
       return `${num1 + num2}`;
@@ -8,4 +8,4 @@ const calcGame = (randomOperator, num1, num2) => {
       return `${num1 * num2}`;
   }
 };
-export default calcGame;
+export default playCalc;

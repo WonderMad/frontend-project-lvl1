@@ -1,5 +1,5 @@
 
-const progressionGame = (distanceBetweenNumsInProgression, progStartNum,
+const playProgression = (distanceBetweenNumsInProgression, progStartNum,
   progression, randomQuestionPosition) => {
   const reassignedProgression = progression;
   const line = progression;
@@ -15,4 +15,4 @@ const progressionGame = (distanceBetweenNumsInProgression, progStartNum,
   return result;
 };
 
-export default progressionGame;
+export default playProgression;

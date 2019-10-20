@@ -1,22 +1,20 @@
 import getRandomInt from '../index';
 import game from '../game-engine';
-import progressionGame from '../Games/progression';
+import playProgression from '../Games/progression';
 
 
 const progressionData = () => {
-  const progStartNum = getRandomInt(1, 50);
-  const distanceBetweenNumsInProg = getRandomInt(1, 10);
-
+  const maxInterval = 10;
+  const farthestPosition = 50;
   const progressionLength = 10;
-  const progression = new Array(progressionLength);
-
-  const minQuestionPosition = 1;
   const maxQuestionPosition = 8;
-  const randomQuestionPosition = getRandomInt(minQuestionPosition, maxQuestionPosition);
 
-
+  const progressionStartPosition = getRandomInt(1, farthestPosition);
+  const progressionInterval = getRandomInt(1, maxInterval);
+  const progression = new Array(progressionLength);
+  const randomQuestionPosition = getRandomInt(1, maxQuestionPosition);
   const question = progression;
-  const result = progressionGame(distanceBetweenNumsInProg, progStartNum, progression,
+  const result = playProgression(progressionInterval, progressionStartPosition, progression,
     randomQuestionPosition);
   return [question, result];
 };

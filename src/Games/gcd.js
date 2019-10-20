@@ -1,4 +1,4 @@
-const gcdGame = (num1, num2) => {
+const playGcd = (num1, num2) => {
   let numb1 = num1;
   let numb2 = num2;
   while (numb1 !== 0 && numb2 !== 0) {
@@ -10,4 +10,4 @@ const gcdGame = (num1, num2) => {
 };
 
 
-export default gcdGame;
+export default playGcd;

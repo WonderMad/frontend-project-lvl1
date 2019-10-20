@@ -1,11 +1,8 @@
-const evenGame = (questionNum) => {
-  if (questionNum % 2 === 0) {
-    return 'yes';
+const isEven = (question) => {
+  if (question % 2 === 0) {
+    return true;
   }
-  if (questionNum % 2 === 1) {
-    return 'no';
-  }
-  return '';
+  return false;
 };
 
-export default evenGame;
+export default isEven;

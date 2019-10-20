@@ -1,14 +1,17 @@
 import getRandomInt from '../index';
-import evenGame from '../Games/even';
+import isEven from '../Games/even';
 import game from '../game-engine';
 
-const evenData = () => {
-  const questionNum = getRandomInt(1, 100);
-  const gameResult = evenGame(questionNum);
-  const question = `${questionNum}`;
-  return [question, gameResult];
+
+const evenDataTransfer = () => {
+  const question = `${getRandomInt(1, 100)}`;
+  const gameResult = isEven(question);
+  let result;
+  if (gameResult === true) {
+    result = 'yes';
+  } else result = 'no';
+  return [question, result];
 };
+const startGame = () => game(evenDataTransfer);
 
-const gameStart = () => game(evenData);
-
-export default gameStart;
+export default startGame;

@@ -1,25 +1,21 @@
 import getRandomInt from '../index';
 import game from '../game-engine';
-import calcGame from '../Games/calc';
+import playCalc from '../Games/calc';
 
 
-const questionExpression = (randomOperator, num1, num2) => {
-  const operations = ['+', '-', '*'];
-  const questionOperation = `${num1} ${operations[randomOperator]} ${num2}`;
-  return questionOperation;
-};
-
-
-const calcData = () => {
-  const randomOperator = getRandomInt(0, 2);
+const calcDataTransfer = () => {
+  const firstOperator = 0;
+  const lastOperator = 2;
+  const randomOperator = getRandomInt(firstOperator, lastOperator);
+  const operators = ['+', '-', '*'];
   const num1 = getRandomInt(1, 20);
   const num2 = getRandomInt(1, 20);
-  const gameResult = calcGame(randomOperator, num1, num2);
-  const question = questionExpression(randomOperator, num1, num2);
-  return [question, gameResult];
+  const questionOperation = `${num1} ${operators[randomOperator]} ${num2}`;
+  const gameResult = playCalc(randomOperator, num1, num2);
+  return [questionOperation, gameResult];
 };
 
 
-const gameStart = () => game(calcData);
+const startGame = () => game(calcDataTransfer);
 
-export default gameStart;
+export default startGame;
