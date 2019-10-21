@@ -3,7 +3,7 @@ import game from '../game-engine';
 import playCalc from '../Games/calc';
 
 
-const calcDataTransfer = () => {
+const transferData = () => {
   const firstOperator = 0;
   const lastOperator = 2;
   const randomOperator = getRandomInt(firstOperator, lastOperator);
@@ -16,6 +16,6 @@ const calcDataTransfer = () => {
 };
 
 
-const startGame = () => game(calcDataTransfer);
+const startGame = () => game(transferData);
 
 export default startGame;

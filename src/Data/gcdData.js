@@ -2,7 +2,7 @@ import getRandomInt from '../index';
 import playGcd from '../Games/gcd';
 import game from '../game-engine';
 
-const gcdDataTransfer = () => {
+const transferData = () => {
   const possibleGCD = getRandomInt(1, 11);
   const num1 = possibleGCD * getRandomInt(1, 25);
   const num2 = possibleGCD * getRandomInt(1, 25);
@@ -11,6 +11,6 @@ const gcdDataTransfer = () => {
   return [question, gameResult];
 };
 
-const startGame = () => game(gcdDataTransfer);
+const startGame = () => game(transferData);
 
 export default startGame;
