@@ -2,7 +2,7 @@ import getRandomInt from '../index';
 import game from '../game-engine';
 import isPrime from '../Games/prime';
 
-const primeData = () => {
+const primeDataTransfer = () => {
   const question = `${getRandomInt(1, 100)}`;
   let result;
   const gameResult = isPrime(question);
@@ -12,6 +12,6 @@ const primeData = () => {
   return [question, result];
 };
 
-const startGame = () => game(primeData);
+const startGame = () => game(primeDataTransfer);
 
 export default startGame;

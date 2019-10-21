@@ -3,7 +3,7 @@ import game from '../game-engine';
 import playProgression from '../Games/progression';
 
 
-const progressionData = () => {
+const progressionDataTransfer = () => {
   const maxInterval = 10;
   const farthestPosition = 50;
   const progressionLength = 10;
@@ -19,6 +19,6 @@ const progressionData = () => {
   return [question, result];
 };
 
-const startGame = () => game(progressionData);
+const startGame = () => game(progressionDataTransfer);
 
 export default startGame;
