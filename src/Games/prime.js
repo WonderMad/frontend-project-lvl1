@@ -1,14 +1,29 @@
+import getRandomInt from '../index';
+import game from '../game-engine';
+
 const isPrime = (question) => {
-  let i = 2;
-  while (i <= question) {
-    if (question % i !== 0) {
-      i += 1;
-    } else if (question % i === 0 && i < question) {
+  if (question === 1) {
+    return false;
+  }
+  if (question === 2) {
+    return true;
+  }
+  for (let i = 2; i < question; i += 1) {
+    if (question % i === 0) {
       return false;
     }
-    return true;
   }
   return true;
 };
 
-export default isPrime;
+
+const transferData = () => {
+  const question = `${getRandomInt(1, 100)}`;
+  const result = isPrime(question) === true ? 'yes' : 'no';
+  return [question, result];
+};
+
+
+const startGame = () => game(transferData);
+
+export default startGame;
