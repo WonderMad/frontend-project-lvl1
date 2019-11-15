@@ -14,16 +14,17 @@ const calculateGcd = (num1, num2) => {
 };
 
 
-const transferBrainGcdData = () => {
+const makeBrainGcdData = () => {
+  const gameIntro = 'Find the greatest common divisor of given numbers.\n';
   const possibleGCD = getRandomInt(1, 11);
   const num1 = possibleGCD * getRandomInt(1, 25);
   const num2 = possibleGCD * getRandomInt(1, 25);
-  const question = `Question: ${num1}, ${num2}`;
+  const question = `${num1}, ${num2}`;
   const gameResult = `${calculateGcd(num1, num2)}`;
-  return [question, gameResult];
+  return [gameIntro, question, gameResult];
 };
 
 
-const startGame = () => game(transferBrainGcdData);
+const startGame = () => game(makeBrainGcdData);
 
 export default startGame;

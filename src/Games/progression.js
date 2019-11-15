@@ -2,23 +2,24 @@ import getRandomInt from '../index';
 import game from '../game-engine';
 
 
-const makeSpaceInProgression = (distanceBetweenNumsInProgression, progStartNum,
+const makeSpaceInProgression = (progressionInterval, progressionStartPosition,
   progression, randomQuestionPosition) => {
   const reassignedProgression = progression;
   const line = progression;
   let i = 0;
-  let j = distanceBetweenNumsInProgression;
+  let j = progressionInterval;
   while (i < progression.length) {
-    line[i] = `${j + progStartNum}`;
+    line[i] = `${j + progressionStartPosition}`;
     i += 1;
-    j += distanceBetweenNumsInProgression;
+    j += progressionInterval;
   }
-  const result = progression[randomQuestionPosition];
-  reassignedProgression[randomQuestionPosition] = '...';
+  const result = `${progressionStartPosition + progressionInterval * (randomQuestionPosition + 1)}`;
+  reassignedProgression[randomQuestionPosition] = '..';
   return result;
 };
 
 const transferBrainProgressionData = () => {
+  const gameIntro = 'What number is missing in the progression?\n';
   const maxInterval = 10;
   const farthestPosition = 50;
   const progressionLength = 10;
@@ -31,9 +32,8 @@ const transferBrainProgressionData = () => {
   const question = progression;
   const result = makeSpaceInProgression(progressionInterval, progressionStartPosition, progression,
     randomQuestionPosition);
-  return [question, result];
+  return [gameIntro, question, result];
 };
-
 
 const startGame = () => game(transferBrainProgressionData);
 

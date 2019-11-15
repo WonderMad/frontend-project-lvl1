@@ -2,11 +2,8 @@ import getRandomInt from '../index';
 import game from '../game-engine';
 
 const isPrime = (question) => {
-  if (question === 1) {
+  if (question <= 1) {
     return false;
-  }
-  if (question === 2) {
-    return true;
   }
   for (let i = 2; i < question; i += 1) {
     if (question % i === 0) {
@@ -18,9 +15,10 @@ const isPrime = (question) => {
 
 
 const transferData = () => {
-  const question = `${getRandomInt(1, 100)}`;
+  const gameIntro = 'Answer "yes" if given number is prime. Otherwise answer "no".\n';
+  const question = getRandomInt(1, 100);
   const result = isPrime(question) === true ? 'yes' : 'no';
-  return [question, result];
+  return [gameIntro, question, result];
 };
 
 
