@@ -2,11 +2,12 @@ import getRandomInt from '../utils';
 import game from '..';
 
 
-const makeProgressionGame = (interval, startPosition, progression, randomQuestionPosition) => {
-  const reassignedProgression = progression;
-  const line = progression;
+const makeProgressionGame = (interval, startPosition, unfilledProgression,
+  randomQuestionPosition) => {
+  const reassignedProgression = unfilledProgression;
+  const line = unfilledProgression;
   let i = 0;
-  while (i < progression.length - 1) {
+  while (i < unfilledProgression.length - 1) {
     line[i] = startPosition + interval * i;
     i += 1;
   }
@@ -15,7 +16,7 @@ const makeProgressionGame = (interval, startPosition, progression, randomQuestio
   return result;
 };
 
-const transferBrainProgressionData = () => {
+const makeBrainProgressionData = () => {
   const gameIntro = 'What number is missing in the progression?';
   const maxInterval = 10;
   const farthestPosition = 50;
@@ -24,13 +25,14 @@ const transferBrainProgressionData = () => {
 
   const startPosition = getRandomInt(1, farthestPosition);
   const interval = getRandomInt(1, maxInterval);
-  const progression = new Array(progressionLength);
+  const unfilledProgression = new Array(progressionLength);
   const randomQuestionPosition = getRandomInt(1, maxQuestionPosition);
-  const question = progression;
-  const result = makeProgressionGame(interval, startPosition, progression, randomQuestionPosition);
+  const question = unfilledProgression;
+  const result = makeProgressionGame(interval, startPosition, unfilledProgression,
+    randomQuestionPosition);
   return [gameIntro, question, result];
 };
 
-const startGame = () => game(transferBrainProgressionData);
+const startGame = () => game(makeBrainProgressionData);
 
 export default startGame;
