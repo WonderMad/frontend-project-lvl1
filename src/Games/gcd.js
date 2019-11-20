@@ -1,5 +1,5 @@
-import getRandomInt from '../index';
-import game from '../game-engine';
+import getRandomInt from '../utils';
+import game from '..';
 
 
 const calculateGcd = (num1, num2) => {
@@ -15,12 +15,12 @@ const calculateGcd = (num1, num2) => {
 
 
 const makeBrainGcdData = () => {
-  const gameIntro = 'Find the greatest common divisor of given numbers.\n';
+  const gameIntro = 'Find the greatest common divisor of given numbers.';
   const possibleGCD = getRandomInt(1, 11);
   const num1 = possibleGCD * getRandomInt(1, 25);
   const num2 = possibleGCD * getRandomInt(1, 25);
   const question = `${num1}, ${num2}`;
-  const gameResult = `${calculateGcd(num1, num2)}`;
+  const gameResult = (calculateGcd(num1, num2)).toString();
   return [gameIntro, question, gameResult];
 };
 
