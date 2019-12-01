@@ -12,7 +12,8 @@ https://asciinema.org/a/z7W7Q3nhbVeJwGZ9ppVsZIzPI - brain-prime
 Clone or download brain-games from git.
 Go to the game directory.
 To install the game you need to install dependencies first - type 'make install' in terminal.
-After this type npm link.
+After this type 'make publish'.
+After this type 'npm link' to install package.
 Now you can start games by typing their names.
 
 - brain-even
