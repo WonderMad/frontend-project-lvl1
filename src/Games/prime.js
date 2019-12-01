@@ -2,11 +2,13 @@
 import getRandomInt from '../utils';
 import game from '..';
 
+const gameIntro = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
 const isPrime = (question) => {
   if (question <= 1) {
     return false;
   }
-  for (let i = 2; i < question; i += 1) {
+  for (let i = 2; i <= Math.sqrt(question); i += 1) {
     if (question % i === 0) {
       return false;
     }
@@ -15,14 +17,13 @@ const isPrime = (question) => {
 };
 
 
-const transferData = () => {
-  const gameIntro = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const generateBrainPrimeData = () => {
   const question = getRandomInt(1, 100);
-  const result = isPrime(question) === true ? 'yes' : 'no';
-  return [gameIntro, question, result];
+  const answer = isPrime(question) === true ? 'yes' : 'no';
+  return [question, answer];
 };
 
 
-const startGame = () => game(transferData);
+const startGame = () => game(gameIntro, generateBrainPrimeData);
 
 export default startGame;

@@ -1,38 +1,34 @@
 import getRandomInt from '../utils';
 import game from '..';
 
+const gameIntro = 'What number is missing in the progression?';
 
-const makeProgressionGame = (interval, startPosition, unfilledProgression,
-  randomQuestionPosition) => {
-  const reassignedProgression = unfilledProgression;
-  const line = unfilledProgression;
-  let i = 0;
-  while (i < unfilledProgression.length - 1) {
+const makeProgressionQuestion = (interval, startPosition, progressionLength,
+  randomEmptyPosition) => {
+  const line = [];
+  for (let i = 0; i < progressionLength; i += 1) {
     line[i] = startPosition + interval * i;
-    i += 1;
   }
-  const result = (startPosition + interval * randomQuestionPosition).toString();
-  reassignedProgression[randomQuestionPosition] = '..';
-  return result;
+  const reassignedProgression = line;
+  reassignedProgression[randomEmptyPosition] = '..';
+  const result = (startPosition + interval * randomEmptyPosition).toString();
+  return [result, reassignedProgression];
 };
 
-const makeBrainProgressionData = () => {
-  const gameIntro = 'What number is missing in the progression?';
+const generateBrainProgressionData = () => {
   const maxInterval = 10;
   const farthestPosition = 50;
   const progressionLength = 10;
-  const maxQuestionPosition = 8;
-
   const startPosition = getRandomInt(1, farthestPosition);
   const interval = getRandomInt(1, maxInterval);
-  const unfilledProgression = new Array(progressionLength);
-  const randomQuestionPosition = getRandomInt(1, maxQuestionPosition);
-  const question = unfilledProgression;
-  const result = makeProgressionGame(interval, startPosition, unfilledProgression,
-    randomQuestionPosition);
-  return [gameIntro, question, result];
+  const randomEmptyPosition = getRandomInt(1, progressionLength - 2);
+  const result = makeProgressionQuestion(interval, startPosition, progressionLength,
+    randomEmptyPosition)[0];
+  const question = makeProgressionQuestion(interval, startPosition, progressionLength,
+    randomEmptyPosition)[1];
+  return [question, result];
 };
 
-const startGame = () => game(makeBrainProgressionData);
+const startGame = () => game(gameIntro, generateBrainProgressionData);
 
 export default startGame;

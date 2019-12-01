@@ -1,17 +1,17 @@
 import getRandomInt from '../utils';
 import game from '..';
 
+const gameIntro = 'Answer "yes" if the number is even, otherwise answer "no".';
+
 const isEven = (question) => question % 2 === 0;
 
-
-const transferBrainEvenData = () => {
-  const gameIntro = 'Answer "yes" if the number is even, otherwise answer "no".';
+const generateBrainEvenData = () => {
   const question = getRandomInt(1, 100);
-  const result = isEven(question) === true ? 'yes' : 'no';
-  return [gameIntro, question, result];
+  const answer = isEven(question) === true ? 'yes' : 'no';
+  return [question, answer];
 };
 
 
-const startGame = () => game(transferBrainEvenData);
+const startGame = () => game(gameIntro, generateBrainEvenData);
 
 export default startGame;
