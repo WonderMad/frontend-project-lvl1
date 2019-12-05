@@ -3,16 +3,15 @@ import game from '..';
 
 const gameIntro = 'What number is missing in the progression?';
 
-const makeProgressionQuestion = (interval, startPosition, progressionLength,
-  randomEmptyPosition) => {
-  const line = [];
+const makeProgressionWithHiddenElement = (interval, startPosition, progressionLength,
+  hiddenElementPosition) => {
+  const progression = [];
   for (let i = 0; i < progressionLength; i += 1) {
-    line[i] = startPosition + interval * i;
+    progression[i] = startPosition + interval * i;
   }
-  const reassignedProgression = line;
-  reassignedProgression[randomEmptyPosition] = '..';
-  const result = (startPosition + interval * randomEmptyPosition).toString();
-  return [result, reassignedProgression];
+  const question = progression;
+  question[hiddenElementPosition] = '..';
+  return question;
 };
 
 const generateBrainProgressionData = () => {
@@ -21,11 +20,10 @@ const generateBrainProgressionData = () => {
   const progressionLength = 10;
   const startPosition = getRandomInt(1, farthestPosition);
   const interval = getRandomInt(1, maxInterval);
-  const randomEmptyPosition = getRandomInt(1, progressionLength - 2);
-  const result = makeProgressionQuestion(interval, startPosition, progressionLength,
-    randomEmptyPosition)[0];
-  const question = makeProgressionQuestion(interval, startPosition, progressionLength,
-    randomEmptyPosition)[1];
+  const hiddenElementPosition = getRandomInt(0, progressionLength - 1);
+  const result = (startPosition + interval * hiddenElementPosition).toString();
+  const question = makeProgressionWithHiddenElement(interval, startPosition, progressionLength,
+    hiddenElementPosition);
   return [question, result];
 };
 
