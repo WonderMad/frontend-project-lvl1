@@ -12,15 +12,14 @@ const game = (gameIntro, gameData) => {
     console.log(`question ${question}`);
     const answer = readlineSync.question('Your answer: ');
     if (result === answer) {
-      console.log('correct\n');
+      console.log('Correct!');
     }
     if (result !== answer) {
-      i = 0;
       console.log(`${answer} is wrong answer.Correct answer was ${result}`);
-      console.log(`Let's try again, ${userName}`);
+      return console.log(`Let's try again, ${userName}`);
     }
   }
-  console.log(`Congratsulations! ${userName}`);
+  return console.log(`Congratsulations! ${userName}`);
 };
 
 export default game;
