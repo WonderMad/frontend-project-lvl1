@@ -1,6 +1,6 @@
 import { cons, car, cdr } from '@hexlet/pairs';
 import getRandomInt from '../utils';
-import startGame from '..';
+import makeGame from '..';
 
 const gameIntro = 'What is the result of the expression?';
 
@@ -23,6 +23,6 @@ const generateBrainCalcData = () => {
   return [question, result];
 };
 
-const startGame = () => game(gameIntro, generateBrainCalcData);
+const startGame = () => makeGame(gameIntro, generateBrainCalcData);
 
 export default startGame;

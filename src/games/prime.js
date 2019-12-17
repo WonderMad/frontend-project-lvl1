@@ -1,6 +1,6 @@
 
 import getRandomInt from '../utils';
-import startGame from '..';
+import makeGame from '..';
 
 const gameIntro = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
@@ -23,6 +23,6 @@ const generateBrainPrimeData = () => {
 };
 
 
-const startGame = () => game(gameIntro, generateBrainPrimeData);
+const startGame = () => makeGame(gameIntro, generateBrainPrimeData);
 
 export default startGame;

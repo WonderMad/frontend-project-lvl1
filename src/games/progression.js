@@ -1,5 +1,5 @@
 import getRandomInt from '../utils';
-import startGame from '..';
+import makeGame from '..';
 
 const gameIntro = 'What number is missing in the progression?';
 
@@ -28,6 +28,6 @@ const generateBrainProgressionData = () => {
   return [question, result];
 };
 
-const startGame = () => game(gameIntro, generateBrainProgressionData);
+const startGame = () => makeGame(gameIntro, generateBrainProgressionData);
 
 export default startGame;

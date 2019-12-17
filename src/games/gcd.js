@@ -1,5 +1,5 @@
 import getRandomInt from '../utils';
-import startGame from '..';
+import makeGame from '..';
 
 const gameIntro = 'Find the greatest common divisor of given numbers.';
 
@@ -24,6 +24,6 @@ const generateBrainGcdData = () => {
 };
 
 
-const startGame = () => game(gameIntro, generateBrainGcdData);
+const startGame = () => makeGame(gameIntro, generateBrainGcdData);
 
 export default startGame;

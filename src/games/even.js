@@ -1,5 +1,5 @@
 import getRandomInt from '../utils';
-import startGame from '..';
+import makeGame from '..';
 
 const gameIntro = 'Answer "yes" if the number is even, otherwise answer "no".';
 
@@ -11,6 +11,6 @@ const generateBrainEvenData = () => {
   return [question, answer];
 };
 
-const startGame = () => game(gameIntro, generateBrainEvenData);
+const startGame = () => makeGame(gameIntro, generateBrainEvenData);
 
 export default startGame;
