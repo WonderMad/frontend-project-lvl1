@@ -4,9 +4,13 @@
 [![Build Status](https://travis-ci.org/WonderMad/frontend-project-lvl1.svg?branch=master)](https://travis-ci.org/WonderMad/frontend-project-lvl1) - travis
 
 https://asciinema.org/a/98K1wPd3DUPv5QziLpmq0CZ64
+
 https://asciinema.org/a/9S9bFywehCD1zKk7phxnlRuVi
+
 https://asciinema.org/a/1xdTEdbomiRCGYC5vZdKxv0XU
+
 https://asciinema.org/a/qZ3dHjW0Ix80wZCMxbReFXGKm
+
 https://asciinema.org/a/z7W7Q3nhbVeJwGZ9ppVsZIzPI
 
 1)Clone or download brain-games from git.
